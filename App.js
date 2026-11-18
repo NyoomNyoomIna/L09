@@ -66,10 +66,12 @@ export default function App() {
   );
 }
 
-const renderItem = ({item}) => {
+const renderItem = ({item, index, section}) => {
   return (
-      <TouchableOpacity style={styles.opacityStyle}>
-        <Text style={styles.textStyle}>{item.key}</Text>
+      <TouchableOpacity style={styles.opacityStyle}
+                        onPress={ () => {Alert.alert(section.title + " " + item.key + " selected!")} }
+      >
+        <Text style={styles.textStyle}>{index+1}. {section.title} {item.key} </Text>
       </TouchableOpacity>
   );
 };
